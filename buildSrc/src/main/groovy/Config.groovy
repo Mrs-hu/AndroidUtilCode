@@ -14,12 +14,12 @@ class Config {
     static compileSdkVersion = 29
     static minSdkVersion = 14
     static targetSdkVersion = 29
-    static versionCode = 1_029_000
-    static versionName = '1.29.0'// E.g. 1.9.72 => 1,009,072
+    static versionCode = 1_030_006
+    static versionName = '1.30.6'// E.g. 1.9.72 => 1,009,072
 
     // lib version
     static gradlePluginVersion = '3.5.0'
-    static kotlinVersion = '1.3.50'
+    static kotlinVersion = '1.3.72'
     static supportVersion = '28.0.0'
 
     static depConfig = [
@@ -37,7 +37,7 @@ class Config {
             feature_subutil_export     : new DepConfig(true , true , ":feature:subutil:export"),
             feature_utilcode_app       : new DepConfig(false, true , ":feature:utilcode:app"),
             feature_utilcode_pkg       : new DepConfig(true , true , ":feature:utilcode:pkg"),
-            feature_utilcode_export    : new DepConfig(true , true , ":feature:utilcode:export"),
+            feature_utilcode_export    : new DepConfig(true , true , ":feature:utilcode:export", "com.blankj:utilcode-export:1.1"),
             lib_base                   : new DepConfig(true , true , ":lib:base"),
             lib_common                 : new DepConfig(true , true , ":lib:common"),
             lib_subutil                : new DepConfig(true , true , ":lib:subutil"),
@@ -53,7 +53,7 @@ class Config {
 
             // 上传新版本插件更新 pluginPath 中的版本号，并设置 isApply = false
             // 通过 mavenLocal 上传本地版本，设置 isApply = true 即可应用插件来调试，最后通过 bintrayUpload 来发布插件
-            plugin_api                 : new DepConfig(isApply: true, useLocal: false, pluginPath: "com.blankj:api-gradle-plugin:1.4", pluginId: "com.blankj.api"),
+            plugin_api                 : new DepConfig(isApply: true, useLocal: false, pluginPath: "com.blankj:api-gradle-plugin:1.5", pluginId: "com.blankj.api"),
             //./gradlew clean :plugin_api-gradle-plugin:mavenLocal     // 上传到本地 mavenLocal
             //./gradlew clean :plugin_api-gradle-plugin:bintrayUpload  // 上传到 jcenter
             plugin_bus                 : new DepConfig(isApply: true, useLocal: false, pluginPath: "com.blankj:bus-gradle-plugin:2.6", pluginId: "com.blankj.bus"),
